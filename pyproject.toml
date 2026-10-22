@@ -1,0 +1,40 @@
+[project]
+name = "resume-rag"
+version = "0.1.0"
+description = "Offline resume RAG pipeline with a Chroma, FAISS, and Pinecone comparison."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain-core",
+    "langchain-community",
+    "langchain-huggingface",
+    "langchain-chroma",
+    "langchain-text-splitters",
+    "chromadb",
+    "faiss-cpu",
+    "pinecone",
+    "pypdf",
+    "sentence-transformers",
+    "openai",
+    "pydantic-settings",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "nbmake",
+    "ipykernel",
+    "ruff",
+    "fpdf2",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
